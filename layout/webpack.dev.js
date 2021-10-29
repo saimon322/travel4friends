@@ -4,20 +4,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
-// Get local IP address in Node.js
-let os = require('os');
-let ifaces = os.networkInterfaces();
-let localIpAddress;
-
-Object.keys(ifaces).forEach(function (ifname) {
-    ifaces[ifname].forEach(function (iface) {
-        if ('IPv4' !== iface.family || iface.internal !== false) {
-            return;
-        }
-        localIpAddress = iface.address;
-    });
-});
-
 module.exports = (env, argv) => {
 
     return merge(common(argv.mode), {
@@ -30,9 +16,9 @@ module.exports = (env, argv) => {
                 warnings: true,
                 errors: true,
             },
-            host: localIpAddress,
-            port: 8081,
-            hot: true,
+            port: 3000,
+            // hot: true,
+            liveReload: true
             // writeToDisk: true,
         },
         watchOptions: {
@@ -50,7 +36,6 @@ module.exports = (env, argv) => {
                                 reloadAll: true,
                             },
                         },
-                        // 'style-loader',
                         {
                             loader: 'css-loader',
                             options: {
@@ -102,14 +87,13 @@ module.exports = (env, argv) => {
                             }
                         },
                     ],
-                }
+                },
             ],
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin(),
             new MiniCssExtractPlugin({
-                // filename: 'css/[name].css',
-                filename: 'style.css',
+                filename: 'css/style.css',
             }),
             // new webpack.SourceMapDevToolPlugin({
             //     filename: "[file].map"

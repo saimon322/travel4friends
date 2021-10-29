@@ -20,7 +20,7 @@ function generateHtmlPlugins(templateDir) {
       })
     })
 }
-  
+
 const htmlPlugins = generateHtmlPlugins('./src/html/views')
 
 module.exports = mode => {
@@ -69,7 +69,7 @@ module.exports = mode => {
                     force: true,
                 }
             ),
-            new SpriteLoaderPlugin(),
+            new SpriteLoaderPlugin({ plainSprite: true }),
         ].concat(htmlPlugins),
     }
 };

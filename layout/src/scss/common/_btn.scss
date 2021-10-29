@@ -1,13 +1,21 @@
 .btn {
-    position: relative;
-    display: inline-block;
-    max-width: 100%;
-    user-select: none;
-    vertical-align: middle;
-    text-align: center;
-    white-space: normal;
-    word-wrap: normal;
-    color: #fff;
-    cursor: pointer;
-    transition: all .2s ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  width: 100%;
+  height: 60px;
+  font-family: $font;
+  background: none;
+  user-select: none;
+  border-radius: 30px;
+  font-weight: normal;
+  line-height: 19px;
+  position: relative;
+  padding: 0 43px;
+  cursor: pointer;
+
+  @include media-up(md) {
+    width: auto;
+  }
 }

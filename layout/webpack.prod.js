@@ -11,14 +11,17 @@ module.exports = (env, argv) => {
         module: {
             rules: [
                 {
-                    test: /\.js$/i,
+                    test: /\.m?js$/,
                     exclude: /(node_modules|bower_components)/,
                     use: {
                         loader: 'babel-loader',
                         options: {
                             presets: ['@babel/preset-env'],
-                            plugins: ['@babel/plugin-transform-runtime'],
-                            // sourceType: 'unambiguous',
+                            plugins: [
+                                ['@babel/transform-runtime'],
+                                ['@babel/plugin-proposal-class-properties'],
+                                ['@babel/plugin-transform-async-to-generator']
+                            ]
                         }
                     }
                 },
@@ -29,17 +32,24 @@ module.exports = (env, argv) => {
                         {
                             loader: 'css-loader',
                             options: {
-                                url: false
+                                sourceMap: true,
+                                url: false,
                             },
                         },
-                        'postcss-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
                         {
                             loader: 'sass-loader',
                             options: {
                                 sassOptions: {
-                                    // indentWidth: 4,
+                                    indentWidth: 4,
                                     // outputStyle: 'expanded',
                                 },
+                                sourceMap: true,
                             },
                         },
                     ],
@@ -56,10 +66,16 @@ module.exports = (env, argv) => {
                         {
                             loader: 'css-loader',
                             options: {
-                                url: false
+                                sourceMap: true,
+                                url: false,
                             },
                         },
-                        'postcss-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: true,
+                            }
+                        },
                     ],
                 }
             ],
@@ -75,8 +91,7 @@ module.exports = (env, argv) => {
         },
         plugins: [
             new MiniCssExtractPlugin({
-                // filename: 'css/[name][hash].css',
-                filename: 'style.css',
+                filename: 'css/style.css',
             }),
             // new BundleAnalyzerPlugin(),
         ],

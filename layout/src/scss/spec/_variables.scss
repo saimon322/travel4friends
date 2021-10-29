@@ -1,14 +1,15 @@
 $grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1500px,
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1500px,
 );
 
 $font: "FuturaPT", -apple-system, system-ui, sans-serif;
-$font-title: "Gilroy", -apple-system, system-ui, sans-serif;
+$font-title: "Georgia", -apple-system, system-ui, sans-serif;
 
 $color-main: #40403f;
 $color-bg:   #f6f2ee;
+$color-light: #e4e4e4;

@@ -1,24 +1,56 @@
 .hero {
-    width: 100%;
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  position: relative;
 
-    &:before {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        background: url(https://livepage.pro/wp-content/themes/livepage-2017/images/header-shadow.png) repeat-x 0 0;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 100%);
+  }
+  
+  &__video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__container {
+    height: 100%;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $color-bg;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-style: italic;
+
+    @include media-up(lg) {
+      font-size: 18px;
     }
-    
-    &__video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  }
 }
