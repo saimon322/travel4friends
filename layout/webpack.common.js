@@ -51,17 +51,13 @@ module.exports = mode => {
                         attributes: false,
                         minimize: false
                     },
-                    include: path.resolve(__dirname, 'src/html/parts'),
+                    include: path.resolve(__dirname, 'src/html/templates'),
                 },
             ],
         },
         plugins: [
             new webpack.DefinePlugin({
                 PRODUCTION: PRODUCTION,
-            }),
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
             }),
             new CopyPlugin([
                 {from: 'img/**/*'},

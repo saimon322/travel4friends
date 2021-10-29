@@ -1,15 +1,10 @@
-<%=_.template(require('../parts/header.html'))({
+<%=_.template(require('../templates/header.html'))({
     title: "Гайды о бюджетных путешествиях. Путешестуйте с нами.",
     menu: {}
 }) %>
 
 <main class="site-main">
-    <section class="intro">
-        <video class="intro__video" autoplay="autoplay" loop="loop" muted="muted" poster="">
-            <source src="video/bg-video.mp4" type="video/mp4">
-            <source src="video/bg-video.webm" type="video/webm">
-        </video>
-    </section>
+    <%=_.template(require("../templates/home/hero.html"))() %>
 </main><!-- / .site-main -->
 
-<%=_.template(require('../parts/footer.html'))() %>
+<%=_.template(require('../templates/footer.html'))() %>
