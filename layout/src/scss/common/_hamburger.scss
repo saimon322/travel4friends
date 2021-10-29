@@ -1,0 +1,43 @@
+.hamburger {
+    position: relative;
+    z-index: 1;
+    width: 19px;
+    height: 20px;
+    animation: linkSlideDown .60s;
+
+    @include media-up(md) {
+        display: none;
+    }
+
+    span {
+        width: 19px;
+        height: 3px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        transition: .3s ease;
+
+        &:nth-child(1) {
+            top: 4px;
+        }
+
+        &:nth-child(2) {
+            top: 13px;
+        }
+    }
+
+    &.active span {
+        width: 21px;
+        top: 8px;
+        left: -1px;
+        background: var(--color-main);
+
+        &:nth-child(1) {
+            transform: rotate(225deg);
+        }
+
+        &:nth-child(2) {
+            transform: rotate(135deg);
+        }
+    }
+}
