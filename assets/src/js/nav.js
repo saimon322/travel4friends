@@ -1,18 +1,25 @@
 const mainNavInit = () => {
-    const $header = document.querySelector('.header');
-    const $navButton = document.querySelector('.hamburger');
-    const $nav = document.querySelector(".nav");
+    const header = document.querySelector('.header');
+    const navButton = document.querySelector('.hamburger');
     const menuClass = 'show-menu';
 
     // Menu buttons
-    $navButton.addEventListener('click', () => {
-        $header.classList.toggle(menuClass);
-        if ($header.classList.contains(menuClass)) {
+    navButton.addEventListener('click', () => {
+        header.classList.toggle(menuClass);
+        if (header.classList.contains(menuClass)) {
             bodyFixPosition();
         } else {
             bodyUnfixPosition();
         }
     });
+
+    // Header color on scroll
+    const headerScroll = () => {
+        header.classList.toggle('scrolled', window.scrollY > window.innerHeight - 50)
+    }
+    
+    headerScroll();
+    window.addEventListener('scroll', headerScroll);
 
     // Fix body IOS
     function bodyFixPosition() {

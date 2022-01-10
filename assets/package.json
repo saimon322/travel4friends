@@ -54,7 +54,7 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.14.0",
-        "aos": "^2.3.4",
+        "@fancyapps/ui": "^4.0.15",
         "swiper": "^7.0.8",
         "uglify-js": "github:mishoo/UglifyJS2#harmony",
         "webp-loader": "^0.6.0",

@@ -3,12 +3,13 @@
   z-index: 1;
   right: 0;
   top: 0;
-  width: 300px;
+  width: 100vw;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   transform: translateX(100%);
-  padding: 30px 20px;
+  padding: 100px 30px 50px;
   background: $color-bg;
+  font-size: 18px;
   transition: transform .5s ease-in-out;
 
   @include media-up(md) {
@@ -33,11 +34,8 @@
   }
 
   &__main {
-    padding: 30px 20px;
-
     @include media-up(md) {
       display: flex;
-      padding: 0;
     }
 
     li {
@@ -57,27 +55,23 @@
       }
 
       &:nth-child(1) {
-        animation: linkSlideDown 900ms;
+        animation: linkSlideDown 1.1s;
       }
 
       &:nth-child(2) {
-        animation: linkSlideDown 1050ms;
+        animation: linkSlideDown 1.2s;
       }
 
       &:nth-child(3) {
-        animation: linkSlideDown 1200ms;
+        animation: linkSlideDown 1.3s;
       }
 
       &:nth-child(4) {
-        animation: linkSlideDown 1350ms;
+        animation: linkSlideDown 1.4s;
       }
 
       &:nth-child(5) {
-        animation: linkSlideDown 1500ms;
-      }
-
-      &:nth-child(6) {
-        animation: linkSlideDown 1650ms;
+        animation: linkSlideDown 1.5s;
       }
 
       &.current-menu-item {
@@ -99,22 +93,14 @@
     }
 
     a {
-      font-size: 15px;
-      line-height: 19px;
-
       @include media-up(md) {
-        color: #fff;
-
-        &:hover {
-          color: $color-light;
-        }
+        @include white-link;
       }
     }
   }
 
   &__footer {
     position: relative;
-    padding: 0 20px 30px;
 
     @include media-up(md) {
       display: none;
@@ -141,11 +127,9 @@
 
     a {
       display: block;
-      font-size: 15px;
-      line-height: 19px;
 
       &:not(:last-child) {
-        margin-bottom: 24px;
+        margin-bottom: 16px;
       }
     }
   }

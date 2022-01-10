@@ -1,0 +1,60 @@
+.custom-title {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto 30px;
+  padding: 0 30px;
+  opacity: 0;
+  transition: opacity 1s;
+  overflow: hidden;
+
+  @include media-up(md) {
+    margin-bottom: 50px;
+  }
+
+  @include media-up(lg) {
+    margin-bottom: 70px;
+  }
+
+  span {
+    position: relative;
+    padding: 0 20px;
+
+    @include media-up(md) {
+      padding: 0 30px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: block;
+      width: 0;
+      height: 1px;
+      background: $color-main;
+      transition: width 1s;
+    }
+  
+    &:before {
+      left: 0;
+      transform: translateX(-100%);
+    }
+  
+    &:after {
+      right: 0;
+      transform: translateX(100%);
+    }
+  }
+    
+  &.wow-init {
+    opacity: 1;
+
+    span {
+      &:before,
+      &:after  {
+        width: 100px;
+      }
+    }
+  }
+}

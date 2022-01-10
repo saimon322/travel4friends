@@ -1,19 +1,29 @@
 @font-face {
-    font-display: swap;
-    font-style: normal;
-    font-weight: 400;
-    font-family: "FuturaPT";
-    src: url("fonts/FuturaPT.woff2") format("woff2"),
-         url("fonts/FuturaPT.ttf") format("ttf"),
-         url("fonts/FuturaPT.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "FuturaPT";
+  src: url("/fonts/FuturaPT.woff2") format("woff2"),
+    url("/fonts/FuturaPT.ttf") format("ttf"),
+    url("/fonts/FuturaPT.woff") format("woff");
 }
 
 @font-face {
-    font-display: swap;
-    font-style: normal;
-    font-weight: 400;
-    font-family: "Georgia";
-    src: url("fonts/Georgia.woff2") format("woff2"),
-         url("fonts/Georgia.ttf") format("ttf"),
-         url("fonts/Georgia.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Georgia";
+  src: url("/fonts/Georgia.woff2") format("woff2"),
+    url("/fonts/Georgia.ttf") format("ttf"),
+    url("/fonts/Georgia.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Kobzarks";
+  src: url("/fonts/Kobzarks.woff2") format("woff2"),
+    url("/fonts/Kobzarks.ttf") format("ttf"),
+    url("/fonts/Kobzarks.woff") format("woff");
 }

@@ -1,10 +1,11 @@
 .header {
-  position: fixed;
+  position: absolute;
   z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
   padding: 15px 0;
+  transition: padding .5s;
 
   @include media-up(md) {
     padding: 20px 0;
@@ -17,7 +18,28 @@
   }
 
   &__logo {
-    color: #fff;
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 60px;
+    height: 50px;
+    @include white-link;
+    animation: linkSlideDown 1s;
+    transition: color .5s;
+
+    @include media-up(md) {
+      width: 90px;
+      height: 70px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .show-menu & {
+      color: $color-main;
+    }
   }
 
   &__overlay {

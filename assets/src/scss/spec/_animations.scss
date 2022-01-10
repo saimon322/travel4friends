@@ -1,6 +1,47 @@
-// Header links
+.wow.fadeInUp {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: .5s;
+
+  &.wow-init {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
 @keyframes linkSlideDown {
-  0%   {transform: translateY(-20px); opacity: 0;}
-  33%  {transform: translateY(-20px); opacity: 0;}
-  100% {transform: translateY(0);     opacity: 1;}
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes arrow-bottom {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+
+  55% {
+    transform: translateY(-7px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }

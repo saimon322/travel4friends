@@ -1,8 +1,8 @@
 /* ==========================================================================
     LIBS
     ========================================================================== */
-@import "~aos/dist/aos.css";
 @import "~swiper/swiper-bundle.css";
+@import "~@fancyapps/ui/dist/fancybox.css";
 
 /* ==========================================================================
     SPECIFICATION
@@ -11,6 +11,7 @@
 @import "spec/variables";
 @import "spec/mixins";
 @import "spec/global";
+@import "spec/animations";
 @import "spec/visually-hidden";
 
 /* ==========================================================================
@@ -23,8 +24,11 @@
 @import "common/hamburger";
 @import "common/footer";
 @import "common/socials";
+@import "common/section";
+@import "common/custom-title";
 
 /* ==========================================================================
     HOME
     ========================================================================== */
-@import "pages/home/hero"
+@import "pages/home/hero";
+@import "pages/home/about";

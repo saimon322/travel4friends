@@ -73,3 +73,12 @@
         @include media-down($name)
     }
 }
+
+@mixin white-link {
+  color: #fff;
+  transition: color .25s;
+
+  &:hover {
+    color: $color-light;
+  }
+}

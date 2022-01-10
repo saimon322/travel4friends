@@ -13,7 +13,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 100%);
   }
   
   &__video {
@@ -52,5 +52,17 @@
     @include media-up(lg) {
       font-size: 18px;
     }
+  }
+
+  &__arrow {    
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 20px);
+    bottom: 20px;
+    width: 40px;
+    height: 25px;
+    @include white-link;
+    cursor: pointer;
+    animation: arrow-bottom 1.7s infinite ease;
   }
 }
