@@ -11,6 +11,8 @@ const displayElement = (el) => {
     setTimeout(() => {
         el.classList.add("wow-init");
     }, delay);
+
+    scrollEls = document.querySelectorAll('.wow:not(.wow-init)');
 };
 
 const handleScroll = () => {
@@ -20,12 +22,10 @@ const handleScroll = () => {
     }
     
     [...scrollEls].forEach((el) => {
-        if (elementInView(el)) {
+        if (!elementInView(el)) {
             displayElement(el);
         }
     })
-    
-    scrollEls = document.querySelectorAll('.wow');
 }
 
 if (scrollEls) {
